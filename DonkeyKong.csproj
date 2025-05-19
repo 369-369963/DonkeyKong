@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="DxDLL.cs" />
     <Compile Include="src\DonkeyKong.cs" />
+    <Compile Include="src\Player.cs" />
     <Compile Include="src\Program.cs" />
   </ItemGroup>
   <ItemGroup>

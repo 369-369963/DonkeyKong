@@ -1,10 +1,29 @@
-﻿using DxLibDLL;
+﻿using System.Diagnostics.Contracts;
+using DxLibDLL;
 
 class Program
 {
 
     static void Main()
     {
+        InputState GetCurrentInput() => new InputState
+        {
+            Jump = DX.CheckHitKey(DX.KEY_INPUT_UP) == 1,
+            Right = DX.CheckHitKey(DX.KEY_INPUT_RIGHT) == 1,
+            Left = DX.CheckHitKey(DX.KEY_INPUT_LEFT) == 1
+        };
+
+        public void Update()
+        {
+          InputState input = GetCurrentInput();
+        }
+
+    struct InputState
+    {
+        public bool Jump;
+        public bool Right;
+        public bool Left;
+    }
         // ウィンドウモードで起動するように設定
         DX.ChangeWindowMode(DX.TRUE);
 
