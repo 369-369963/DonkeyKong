@@ -1,16 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Numerics;
+using DxLibDLL;
 
-namespace DonkeyKong.src
+static class Player
 {
-    internal class Mario
+    public static void Update(InputState input)
     {
-        public void Update(InputState input)
+        if (input.Jump)
         {
-
+            Console.WriteLine("Jump");
+        }
+        if (input.Right)
+        {
+            Console.WriteLine("Move Right");
+        }
+        if (input.Left)
+        {
+            Console.WriteLine("Move Left");
         }
     }
 }
